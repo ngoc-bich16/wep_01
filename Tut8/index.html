@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .box{
+        position: relative;
+    }
+    #tank{
+        position: absolute;
+    }
+</style>
+<body>
+    <div class="container" style="border: 1px solid black; height: 190px; width: 190px; background-color: #ffffff;">
+
+        <img id="tank"
+        src="tank.png"
+        style="position: relative; top: 0px; left: 0px;"
+        width="19"
+        height="19">
+    </div>
+   
+    <script>
+       var updown = 1;
+       var pos = 0;
+       var tank = document.getElementById("tank");
+       var t = setInterval(move, 10);
+
+       function move() {
+           if((pos>170) || (pos<0)) {
+               updown = (-updown);
+           }
+           pos += updown;
+           tank.style.left = pos+"px";
+       }
+
+    </script>
+
+</body>
+</html>
